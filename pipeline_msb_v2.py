@@ -393,6 +393,7 @@ def Print_out_everything():
 
 # flush object values for new write
 
+
 def prop_flush():
 	ID_write.reset_props()
 	EX_write.reset_props()
