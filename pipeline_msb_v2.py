@@ -417,24 +417,23 @@ def Copy_write_to_read():
 	prop_flush()
 
 
-
 instructions = [0xa1020000, 0x810AFFFC, 0x00831820, 0x01263820, 0x01224820, 0x81180000, 0x81510010, 0x00624022, 0x00000000, 0x00000000, 0x00000000, 0x00000000]
 
 
+IF_write = IF_ID(0x0, 0)
+IF_read = IF_ID(0x0, 0x0)
+
+ID_write = ID_EX()
+ID_read = ID_EX()
+
+EX_write = EX_MEM()
+EX_read = EX_MEM()
+
+MEM_write = MEM_WB()
+MEM_read = MEM_WB()
+
 
 def MAIN():
-
-	IF_write = IF_ID(0x0, 0)
-	IF_read = IF_ID(0x0, 0x0)
-
-	ID_write = ID_EX()
-	ID_read = ID_EX()
-
-	EX_write = EX_MEM()
-	EX_read = EX_MEM()
-
-	MEM_write = MEM_WB()
-	MEM_read = MEM_WB()
 
 	clock_counter = 0
 	current_address = 0x7a000
@@ -442,7 +441,6 @@ def MAIN():
 	print "#################### CLOCK CYCLE", clock_counter, "###########################"
 	Print_out_everything()
 	print ''
-
 
 	for i in instructions:
 		clock_counter += 1
